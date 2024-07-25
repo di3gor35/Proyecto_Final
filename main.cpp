@@ -14,6 +14,8 @@ int main() {
 	paciente.edad = 45;
 	
 	mostrarPaciente(paciente);
+	agregarPaciente(registro, paciente);
+	listarPacientes(registro);
 	
 	
 	

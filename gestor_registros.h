@@ -11,5 +11,7 @@ struct RegistroPacientes {
 };
 
 void iniciarRegistro(RegistroPacientes &registro);
+void agregarPaciente(RegistroPacientes &registro, Paciente paciente);
+void listarPacientes(RegistroPacientes registro);
 
 #endif
