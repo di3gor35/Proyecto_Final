@@ -15,6 +15,9 @@ struct Paciente {
 void crearPaciente(Paciente &paciente, string nombre, int edad, string genero, string numeroDNI, string tipoSangre);
 string obtenerNombre(const Paciente &paciente);
 void establecerNombre(Paciente &paciente, string nombre);
-int obtenerEdad(const Paciente &paciente)
+int obtenerEdad(const Paciente &paciente);
+void establecerEdad(Paciente &paciente, int edad);
+string obtenerGenero(const Paciente &paciente);
+void establecerGenero(Paciente &paciente, string genero);
 
 #endif
