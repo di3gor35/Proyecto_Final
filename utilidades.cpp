@@ -22,6 +22,8 @@ void menuprinc (){
 			menuvisdat ();
 		case 3:
 			menuandat ();
+		case 4:
+			menufunesp ();
 	}
 };
 
@@ -95,6 +97,29 @@ void menuandat (){
 		case 5:
 			menuprinc ();
 	}
+};
+	
+void menufunesp (){
+	int op;
+	cout<<"----- FUNCIONALIDADES ESPECÍFICAS -----"<<endl;
+	cout<<"1) Filtrar pacientes por tipo de sangre"<<endl;
+	cout<<"2) Mostrar historial médico de un paciente"<<endl;
+	cout<<"3) Generar reporte de pacientes con condiciones específicas"<<endl;
+	cout<<"4) Volver al menú pricipal"<<endl;
+	cout<<"Elija su opción: ";
+	cin>>op;
+	
+	switch (op){
+		case 1:
+			break;
+		case 2:
+			break;
+		case 3:
+			break;
+		case 4:
+			menuprinc ();
+	}
+};
   
 int main (){
 	SetConsoleOutputCP(CP_UTF8);
