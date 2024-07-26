@@ -20,6 +20,8 @@ void menuprinc (){
 			menugestpac ();
 		case 2:
 			menuvisdat ();
+		case 3:
+			menuandat ();
 	}
 };
 
@@ -69,6 +71,30 @@ void menuvisdat (){
 			menuprinc ();
 	}
 };
+
+void menuandat (){
+	int op;
+	cout<<"----- ANÁLISIS DE DATOS -----"<<endl;
+	cout<<"1) Calcular edad promedio de pacientes"<<endl;
+	cout<<"2) Mostrar paciente más joven y más anciano"<<endl;
+	cout<<"3) Contar pacientes por género"<<endl;
+	cout<<"4) Contar pacientes por tipo de sangre"<<endl;
+	cout<<"5) Volver al menú pricipal"<<endl;
+	cout<<"Elija su opción: ";
+	cin>>op;
+	
+	switch (op){
+		case 1:
+			break;
+		case 2:	
+			break;
+		case 3:
+			break;
+		case 4:
+			break;
+		case 5:
+			menuprinc ();
+	}
   
 int main (){
 	SetConsoleOutputCP(CP_UTF8);
