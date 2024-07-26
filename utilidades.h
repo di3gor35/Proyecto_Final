@@ -1,7 +1,8 @@
 #ifndef UTILIDADES_H
 #define UTILIDADES_H
 
-void menugestpac ();
 void menuprinc ();
+void menugestpac ();
+void menuvisdat ();
 
 #endif

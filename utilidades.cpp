@@ -18,7 +18,8 @@ void menuprinc (){
 	switch (op){
 		case 1:
 			menugestpac ();
-			
+		case 2:
+			menuvisdat ();
 	}
 };
 
@@ -47,6 +48,28 @@ void menugestpac (){
 	}
 };
 
+void menuvisdat (){
+	int op;
+	cout<<"----- VISUALIZACIÓN DE DATOS -----"<<endl;
+	cout<<"1) Listar todos los pacientes"<<endl;
+	cout<<"2) Mostrar pacientes ordenados por nombre"<<endl;
+	cout<<"3) Mostrar pacientes ordenados por edad"<<endl;
+	cout<<"4) Volver al menú principal"<<endl;
+	cout<<"Elija su opción: ";
+	cin>>op;
+	
+	switch (op){
+		case 1:
+			break;
+		case 2:
+			break;
+		case 3:
+			break;
+		case 4:
+			menuprinc ();
+	}
+};
+  
 int main (){
 	SetConsoleOutputCP(CP_UTF8);
 	menuprinc ();
