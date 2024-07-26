@@ -14,6 +14,37 @@ void menuprinc (){
 	cout<<"5) Cerrar el programa"<<endl;
 	cout<<"Elija su opción: ";
 	cin>>op;
+	
+	switch (op){
+		case 1:
+			menugestpac ();
+			
+	}
+};
+
+void menugestpac (){
+	int op;
+	cout<<"----- GESTIÓN DE PACIENTES -----"<<endl;
+	cout<<"1) Agregar nuevo paciente"<<endl;
+	cout<<"2) Eliminar paciente"<<endl;
+	cout<<"3) Actualizar información de paciente"<<endl;
+	cout<<"4) Buscar paciente por DNI"<<endl;
+	cout<<"5) Volver al menú principal"<<endl;
+	cout<<"Elija su opción: ";
+	cin>>op;
+	
+	switch (op){
+		case 1:
+			break;
+		case 2:
+			break;
+		case 3:
+			break;
+		case 4:
+			break;
+		case 5:
+			menuprinc ();	
+	}
 };
 
 int main (){
