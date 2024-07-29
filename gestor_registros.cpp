@@ -18,7 +18,7 @@ void agregarPaciente(RegistroPacientes &registro, Paciente paciente){
 
 void listarPacientes(RegistroPacientes registro){
 	for (int i = 0; i < registro.numPacientes; i++){
-		cout << "Paciente " << i+1 << endl;
+		cout << "- Paciente " << i+1 << " -" << endl;
 		cout << "Nombre: " << registro.pacientes[i].nombre << endl;
         cout << "Edad: " << registro.pacientes[i].edad << endl;
         cout << "Género: " << registro.pacientes[i].genero << endl;
@@ -57,6 +57,7 @@ void actualizarPaciente(RegistroPacientes &registro){
             cout << "Edad: ", cin >> registro.pacientes[i].edad;
             cout << "Género: ", cin >> registro.pacientes[i].genero;
             cout << "Tipo de Sangre: ", cin >> registro.pacientes[i].tipoSangre;
+            cout << endl << "Se actualizaron los datos correctamente" << endl;
 			return;
 		}
 	}
@@ -125,14 +126,14 @@ void mostrarPacienteMasJovenMasLongevo(RegistroPacientes registro){
 			pj = i;	
 		}
 	}
-	cout << "Paciente más joven" << endl;
+	cout << "- Paciente más joven -" << endl;
 	cout << "Nombre: " << registro.pacientes[pj].nombre << endl;
 	cout << "Edad: " << registro.pacientes[pj].edad << endl;
     cout << "Género: " << registro.pacientes[pj].genero << endl;
     cout << "DNI: " << registro.pacientes[pj].numeroDNI << endl;
     cout << "Tipo de Sangre: " << registro.pacientes[pj].tipoSangre << endl;
 	cout << endl;
-	cout << "Paciente más longevo" << endl;
+	cout << "- Paciente más longevo -" << endl;
 	cout << "Nombre: " << registro.pacientes[pl].nombre << endl;
 	cout << "Edad: " << registro.pacientes[pl].edad << endl;
     cout << "Género: " << registro.pacientes[pl].genero << endl;
@@ -179,6 +180,7 @@ void mostrarPacientesPorGrupoSanguineo(RegistroPacientes registro){
     for (int i = 0; i < registro.numPacientes; i++){
         if (registro.pacientes[i].tipoSangre == tipoSangre){
             mostrarInformacion(registro.pacientes[i]);
+            cout<<endl;
             cont++;
         }
     }
@@ -208,6 +210,7 @@ void crearPaciente2(RegistroPacientes &registro){
     cout << "Género: ", cin >> genero;
 	cout << "DNI: ", cin >> numeroDNI;
     cout << "Tipo de Sangre: ", cin >> tipoSangre;
+    cout << endl << "Nuevo paciente agregado correctamente"<<endl;
 	Paciente paciente;
 	crearPaciente(paciente, nombre, edad, genero, numeroDNI, tipoSangre);
 	agregarPaciente(registro, paciente);
