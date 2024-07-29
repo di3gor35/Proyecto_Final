@@ -42,3 +42,19 @@ string obtenerNumeroDNI(Paciente &paciente){
 void establecerNumeroDNI(Paciente &paciente, string numeroDNI){
     paciente.numeroDNI = numeroDNI;
 }
+
+string obtenerTipoSangre(Paciente &paciente){
+    return paciente.tipoSangre;
+}
+
+void obtenerTipoSangre(Paciente &paciente, string tipoSangre){
+    paciente.tipoSangre = tipoSangre;
+}
+
+void agregarEntradaHistorial(Paciente &paciente, string entrada){
+    if (paciente.numEntradasHistorial < 10){
+        paciente.historialMedico[paciente.numEntradasHistorial++] = entrada;
+    } else{
+        cout << "El historial médico está lleno." << endl;
+    }
+}
