@@ -157,7 +157,7 @@ void contarPacientesPorGrupoSanguineo(RegistroPacientes registro){
         }
     }
 	cout << "Cantidad de pacientes por grupo sanguíneo" << endl;
-    for (int j = 0; j < 8; j++) {
+    for (int j = 0; j < 8; j++){
         cout << "Grupo " << grupos[j] << ": " << conteo[j] << " pacientes" << endl;
     }
 }
