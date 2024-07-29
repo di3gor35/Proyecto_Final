@@ -58,3 +58,19 @@ void agregarEntradaHistorial(Paciente &paciente, string entrada){
         cout << "El historial médico está lleno." << endl;
     }
 }
+
+void mostrarHistorialMedico(const Paciente &paciente) {
+    cout << "Historial médico:" << endl;
+    for (int i = 0; i < paciente.numEntradasHistorial; i++) {
+        cout << paciente.historialMedico[i] << endl;
+    }
+}
+
+void mostrarInformacion(const Paciente &paciente) {
+    cout << "Nombre: " << paciente.nombre << endl;
+    cout << "Edad: " << paciente.edad << endl;
+    cout << "Genero: " << paciente.genero << endl;
+    cout << "Número de Identificación: " << paciente.numeroIdentificacion << endl;
+    cout << "Tipo de Sangre: " << paciente.tipoSangre << endl;
+    mostrarHistorialMedico(paciente);
+}
