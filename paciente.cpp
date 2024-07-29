@@ -26,3 +26,11 @@ int obtenerEdad(Paciente &paciente){
 void establecerEdad(Paciente &paciente, int edad){
 	paciente.edad = edad;
 }
+
+string getGenero(const Paciente &paciente) {
+    return paciente.genero;
+}
+
+void setGenero(Paciente &paciente, string genero) {
+    paciente.genero = genero;
+}
