@@ -106,7 +106,7 @@ void listarPacientesPorEdad(RegistroPacientes registro){
 }
 
 void mostrarEdadPromedioPacientes(RegistroPacientes registro){
-	int suma = 0; // Guarga la suma de las edades
+	float suma = 0; // Guarga la suma de las edades
 	for (int i = 0; i < registro.numPacientes; i++){
 		suma += registro.pacientes[i].edad;
 	}
@@ -131,7 +131,7 @@ void mostrarPacienteMasJovenMasLongevo(RegistroPacientes registro){
     cout << "Género: " << registro.pacientes[pj].genero << endl;
     cout << "DNI: " << registro.pacientes[pj].numeroDNI << endl;
     cout << "Tipo de Sangre: " << registro.pacientes[pj].tipoSangre << endl;
-	
+	cout << endl;
 	cout << "Paciente más longevo" << endl;
 	cout << "Nombre: " << registro.pacientes[pl].nombre << endl;
 	cout << "Edad: " << registro.pacientes[pl].edad << endl;
