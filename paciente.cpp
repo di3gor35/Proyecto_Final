@@ -18,3 +18,11 @@ string obtenerPaciente(Paciente &paciente){
 void establecerNombre(Paciente &paciente, string nombre){
 	paciente.nombre = nombre;
 }
+
+int obtenerEdad(Paciente &paciente){
+	return paciente.edad;
+}
+
+void establecerEdad(Paciente &paciente, int edad){
+	paciente.edad = edad;
+}
