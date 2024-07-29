@@ -1,8 +1,11 @@
 #include <iostream>
+#include "paciente.h"
 #include "utilidades.h"
+#include "gestor_registros.h"
+
 using namespace std;
 
-void menuprinc (){
+void menuprinc (RegistroPacientes &registro){
 	char op;
 	do {
 		cout<<"----- MENÚ PRINCIPAL -----"<<endl;
@@ -18,19 +21,19 @@ void menuprinc (){
 		switch (op){
 			case '1':
 				cout<<"Entrando al menú "<<op<<"..."<<endl;
-				menugestpac ();
+				menugestpac (registro);
 				break;
 			case '2':
 				cout<<"Entrando al menú "<<op<<"..."<<endl;
-				menuvisdat ();
+				menuvisdat (registro);
 				break;
 			case '3':
 				cout<<"Entrando al menú "<<op<<"..."<<endl;
-				menuandat ();
+				menuandat (registro);
 				break;
 			case '4':
 				cout<<"Entrando al menú "<<op<<"..."<<endl;
-				menufunesp ();
+				menufunesp (registro);
 				break;
 			case '5':
 				cout<<"Muchas gracias por usar el programa."<<endl;
@@ -45,7 +48,7 @@ void menuprinc (){
 };
 	
 
-void menugestpac (){
+void menugestpac (RegistroPacientes &registro){
 	char op;
 	do {
 		cout<<endl;
@@ -61,16 +64,16 @@ void menugestpac (){
 		
 		switch (op){
 			case '1':
-				//
+				crearPaciente2(registro);
 				break;
 			case '2':
-				//
+				eliminarPaciente(registro);
 				break;
 			case '3':
-				//
+				actualizarPaciente(registro);
 				break;
 			case '4':
-				//
+				buscarPaciente(registro);
 				break;
 			case '5':
 				cout<<"Volviendo al menú principal..."<<endl<<endl;
@@ -82,7 +85,7 @@ void menugestpac (){
 	} while (op!='5');
 };
 
-void menuvisdat (){
+void menuvisdat (RegistroPacientes &registro){
 	char op;
 	do {
 		cout<<endl;
@@ -97,13 +100,13 @@ void menuvisdat (){
 		
 		switch (op){
 			case '1':
-				//
+				listarPacientes(registro);
 				break;
 			case '2':
-				//
+				listarPacientesPorNombre(registro);
 				break;
 			case '3':
-				//
+				listarPacientesPorEdad(registro);
 				break;
 			case '4':
 				cout<<"Volviendo al menú principal..."<<endl<<endl;
@@ -115,7 +118,7 @@ void menuvisdat (){
 	} while (op!='4');
 };
 
-void menuandat (){
+void menuandat (RegistroPacientes &registro){
 	char op;
 	do {
 		cout<<endl;
@@ -131,16 +134,16 @@ void menuandat (){
 		
 		switch (op){
 			case '1':
-				//
+				mostrarEdadPromedioPacientes(registro);
 				break;
 			case '2':
-				//
+				mostrarPacienteMasJovenMasLongevo(registro);
 				break;
 			case '3':
-				//
+				contarPacientesPorGeneros(registro);
 				break;
 			case '4':
-				//
+				contarPacientesPorGrupoSanguineo(registro);
 				break;
 			case '5':
 				cout<<"Volviendo al menú principal..."<<endl<<endl;
@@ -153,7 +156,7 @@ void menuandat (){
 	} while (op!='5');
 };
 	
-void menufunesp (){
+void menufunesp (RegistroPacientes &registro){
 	char op;
 	do {
 		cout<<endl;
@@ -168,10 +171,10 @@ void menufunesp (){
 		
 		switch (op){
 			case '1':
-				//
+				mostrarPacientesPorGrupoSanguineo(registro);
 				break;
 			case '2':
-				//
+				mostrarHistorial(registro);
 				break;
 			case '3':
 				//

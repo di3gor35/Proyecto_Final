@@ -1,11 +1,13 @@
 #ifndef UTILIDADES_H
 #define UTILIDADES_H
+#include "gestor_registros.h"
 
-void menuprinc ();	// Menú principal
-void menugestpac ();// Menú de Gestión de Pacientes
-void menuvisdat ();	// Menú de Visualización de datos
-void menuandat ();	// Menú de Análisis de Datos
-void menufunesp ();	// Menú de Funciones específicas
+
+void menuprinc (RegistroPacientes &registro);	// Menú principal
+void menugestpac (RegistroPacientes &registro);// Menú de Gestión de Pacientes
+void menuvisdat (RegistroPacientes &registro);	// Menú de Visualización de datos
+void menuandat (RegistroPacientes &registro);	// Menú de Análisis de Datos
+void menufunesp (RegistroPacientes &registro);	// Menú de Funciones específicas
 
 
 #endif

@@ -70,7 +70,7 @@ void mostrarInformacion(const Paciente &paciente) {
     cout << "Nombre: " << paciente.nombre << endl;
     cout << "Edad: " << paciente.edad << endl;
     cout << "Genero: " << paciente.genero << endl;
-    cout << "Número de Identificación: " << paciente.numeroIdentificacion << endl;
+    cout << "Número de Identificación: " << paciente.numeroDNI << endl;
     cout << "Tipo de Sangre: " << paciente.tipoSangre << endl;
     mostrarHistorialMedico(paciente);
 }
