@@ -57,7 +57,7 @@ void actualizarPaciente(RegistroPacientes &registro){
             cout << "Edad: ", cin >> registro.pacientes[i].edad;
             cout << "Género: ", cin >> registro.pacientes[i].genero;
             cout << "Tipo de Sangre: ", cin >> registro.pacientes[i].tipoSangre;
-			
+			return;
 		}
 	}
 	cout << "Paciente no encontrado" << endl;
