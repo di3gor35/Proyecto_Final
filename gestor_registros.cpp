@@ -1,6 +1,6 @@
 #include <iostream>
 #include "gestor_registros.h"
-
+ 
 using namespace std;
 
 void iniciarRegistro(RegistroPacientes &registro){
@@ -24,10 +24,13 @@ void listarPacientes(RegistroPacientes registro){
         cout << "Género: " << registro.pacientes[i].genero << endl;
         cout << "DNI: " << registro.pacientes[i].numeroDNI << endl;
         cout << "Tipo de Sangre: " << registro.pacientes[i].tipoSangre << endl;
+        cout << endl;
 	}
 }
 
-void buscarPaciente(RegistroPacientes registro, string numeroDNI){
+void buscarPaciente(RegistroPacientes registro){
+	string numeroDNI;
+	cout << "Ingrese el número DNI del paciente: ", cin >> numeroDNI;
 	for (int i = 0; i < registro.numPacientes; i++){
 		if (registro.pacientes[i].numeroDNI == numeroDNI){
 			cout << "Paciente encontrado" << endl;
@@ -36,26 +39,33 @@ void buscarPaciente(RegistroPacientes registro, string numeroDNI){
             cout << "Género: " << registro.pacientes[i].genero << endl;
             cout << "DNI: " << registro.pacientes[i].numeroDNI << endl;
             cout << "Tipo de Sangre: " << registro.pacientes[i].tipoSangre << endl;
+            return;
 		}
 	}
 	cout << "Paciente no encontrado" << endl;
 }
 
-void actualizarPaciente(RegistroPacientes &registro, string numeroDNI){
+void actualizarPaciente(RegistroPacientes &registro){
+	string numeroDNI;
+	cout << "Ingrese el número DNI del paciente: ", cin >> numeroDNI;
 	for (int i = 0; i < registro.numPacientes; i++){
 		if (registro.pacientes[i].numeroDNI == numeroDNI){
 			cout << "Paciente encontrado" << endl;
 			cout << "Introduzca los nuevos datos:" << endl;
-			cout << "Nombre: ", getline(cin, registro.pacientes[i].nombre)<< endl;
-            cout << "Edad: ", cin >> registro.pacientes[i].edad << endl;
-            cout << "Género: ", cin >> registro.pacientes[i].genero << endl;
-            cout << "Tipo de Sangre: ", cin >> registro.pacientes[i].tipoSangre << endl;
+			cout << "Nombre: ", cin.ignore();
+			getline(cin, registro.pacientes[i].nombre);
+            cout << "Edad: ", cin >> registro.pacientes[i].edad;
+            cout << "Género: ", cin >> registro.pacientes[i].genero;
+            cout << "Tipo de Sangre: ", cin >> registro.pacientes[i].tipoSangre;
+			
 		}
 	}
 	cout << "Paciente no encontrado" << endl;
 }
 
-void eliminarPaciente(RegistroPacientes &registro, string numeroDNI) {
+void eliminarPaciente(RegistroPacientes &registro) {
+	string numeroDNI;
+	cout << "Ingrese el número DNI del paciente: ", cin >> numeroDNI;
     for (int i = 0; i < registro.numPacientes; i++) {
         if (registro.pacientes[i].numeroDNI == numeroDNI) {
             for (int j = i; j < registro.numPacientes - 1; j++) {
@@ -148,7 +158,7 @@ void contarPacientesPorGrupoSanguineo(RegistroPacientes registro){
 	string grupos[] = {"A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"};
 	int conteo[8] = {0}; // Arreglo que almacena la cantidad de pacientes con cada grupo sanguineo y es inicializada en 0
 
-    for (int i = 0; i < gestor.numPacientes; i++){
+    for (int i = 0; i < registro.numPacientes; i++){
         for (int j = 0; j < 8; j++){
             if (registro.pacientes[i].tipoSangre == grupos[j]){
                 conteo[j]++;
@@ -162,3 +172,43 @@ void contarPacientesPorGrupoSanguineo(RegistroPacientes registro){
     }
 }
 
+void mostrarPacientesPorGrupoSanguineo(RegistroPacientes registro){
+	string tipoSangre;
+	int cont = 0;
+	cout << "Ingrese el grupo sanguíneo: ", cin >> tipoSangre;
+    for (int i = 0; i < registro.numPacientes; i++){
+        if (registro.pacientes[i].tipoSangre == tipoSangre){
+            mostrarInformacion(registro.pacientes[i]);
+            cont++;
+        }
+    }
+    if (cont == 0){
+    	cout << "No se encontraron pacientes con el grupo sanguíneo " << tipoSangre << endl;
+	}
+}
+
+void mostrarHistorial(RegistroPacientes registro){
+	string numeroDNI;
+	cout << "Ingrese el número DNI del paciente: ", cin >> numeroDNI;
+	for (int i = 0; i < registro.numPacientes; i++){
+		if (registro.pacientes[i].numeroDNI == numeroDNI){
+			mostrarHistorialMedico(registro.pacientes[i]);
+            return;
+		}
+	}
+	cout << "Paciente no encontrado" << endl;
+}
+
+void crearPaciente2(RegistroPacientes &registro){
+	string nombre, genero, tipoSangre, numeroDNI;
+	int edad;
+	cout << "Nombre: ", cin.ignore();
+	getline(cin, nombre);
+	cout << "Edad: ", cin >> edad;
+    cout << "Género: ", cin >> genero;
+	cout << "DNI: ", cin >> numeroDNI;
+    cout << "Tipo de Sangre: ", cin >> tipoSangre;
+	Paciente paciente;
+	crearPaciente(paciente, nombre, edad, genero, numeroDNI, tipoSangre);
+	agregarPaciente(registro, paciente);
+}
