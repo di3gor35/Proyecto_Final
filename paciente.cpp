@@ -27,10 +27,18 @@ void establecerEdad(Paciente &paciente, int edad){
 	paciente.edad = edad;
 }
 
-string getGenero(const Paciente &paciente) {
+string obtenerGenero(Paciente &paciente){
     return paciente.genero;
 }
 
-void setGenero(Paciente &paciente, string genero) {
+void establecerGenero(Paciente &paciente, string genero){
     paciente.genero = genero;
+}
+
+string obtenerNumeroDNI(Paciente &paciente){
+    return paciente.numeroDNI;
+}
+
+void establecerNumeroDNI(Paciente &paciente, string numeroDNI){
+    paciente.numeroDNI = numeroDNI;
 }
