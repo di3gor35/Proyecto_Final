@@ -4,5 +4,8 @@
 void menuprinc ();
 void menugestpac ();
 void menuvisdat ();
+void menuandat ();
+void menufunesp ();
+
 
 #endif
