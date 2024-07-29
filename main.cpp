@@ -10,7 +10,8 @@ int main() {
 	SetConsoleOutputCP(CP_UTF8);
 	RegistroPacientes registro;
 	iniciarRegistro(registro);
-	cout << "Bienvenidos al: Programa de Simulación de un Sistema de Información de Registro de Pacientes" << endl;
+	iniciarDatosPredefinidos (registro);
+	cout << "Bienvenidos al: Programa de Simulación de un Sistema de Información de Registro de Pacientes" << endl << endl;
 	menuprinc(registro);
 	
 	return 0;

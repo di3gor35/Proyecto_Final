@@ -9,5 +9,6 @@ void menuvisdat (RegistroPacientes &registro);	// Menú de Visualización de dat
 void menuandat (RegistroPacientes &registro);	// Menú de Análisis de Datos
 void menufunesp (RegistroPacientes &registro);	// Menú de Funciones específicas
 
+void iniciarDatosPredefinidos (RegistroPacientes &registro); // Iniciar datos predefinidos
 
 #endif

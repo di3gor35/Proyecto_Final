@@ -188,3 +188,18 @@ void menufunesp (RegistroPacientes &registro){
 		}
 	} while (op!='4');
 };
+
+void iniciarDatosPredefinidos (RegistroPacientes &registro){
+	Paciente paciente1, paciente2, paciente3, paciente4, paciente5;
+	crearPaciente (paciente1, "Juan Gabriel Velasquez Alvarado", 18, "Masculino", "75894432", "O+");
+	crearPaciente (paciente2, "Nikol Esmeralda Mallma Anahua", 17, "Femenino", "78712491", "O+");
+	crearPaciente (paciente3, "Susana Díaz Díaz", 60, "Femenino", "44827149", "O-");
+	crearPaciente (paciente4, "Gabriel Estefy Peñaolza Gutierrez", 50, "Masculino", "76721486", "AB+");
+	crearPaciente (paciente5, "Niel Brham Zavala Meza", 36, "Masculino", "44570956", "B+");
+	
+	agregarPaciente (registro, paciente1);
+	agregarPaciente (registro, paciente2);
+	agregarPaciente (registro, paciente3);
+	agregarPaciente (registro, paciente4);
+	agregarPaciente (registro, paciente5);
+}
