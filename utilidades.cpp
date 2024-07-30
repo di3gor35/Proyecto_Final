@@ -162,8 +162,8 @@ void menufunesp (RegistroPacientes &registro){
 		cout<<endl;
 		cout<<"----- 4.FUNCIONALIDADES ESPECÍFICAS -----"<<endl;
 		cout<<"1) Filtrar pacientes por tipo de sangre"<<endl;
-		cout<<"2) Mostrar historial médico de un paciente"<<endl;
-		cout<<"3) Generar reporte de pacientes con condiciones específicas"<<endl;
+		cout<<"2) Agregar historial médico"<<endl;
+		cout<<"3) Mostrar historial médico de un paciente"<<endl;
 		cout<<"4) Volver al menú pricipal"<<endl;
 		cout<<"Elija su opción (1-4): ";
 		cin>>op;
@@ -174,10 +174,10 @@ void menufunesp (RegistroPacientes &registro){
 				mostrarPacientesPorGrupoSanguineo(registro);
 				break;
 			case '2':
-				mostrarHistorial(registro);
+				agregarHistorial(registro);
 				break;
 			case '3':
-				//
+				mostrarHistorial(registro);
 				break;
 			case '4':
 				cout<<"Volviendo al menú principal..."<<endl<<endl;
