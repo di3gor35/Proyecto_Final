@@ -2,7 +2,6 @@
 #define GESTOR_REGISTROS_H
 
 #include "paciente.h"
-
 // Cantidad maxima de pacientes en el registro
 const int MAX_PACIENTES = 100;
 
@@ -27,5 +26,8 @@ void contarPacientesPorGrupoSanguineo(RegistroPacientes registro); // Cuenta y m
 void mostrarPacientesPorGrupoSanguineo(RegistroPacientes registro); // Mostrar pacientes con el grupo sanguineo esperado
 void mostrarHistorial(RegistroPacientes registro); // Mostrar el historial medico de un paciente
 void crearPaciente2(RegistroPacientes &registro); // Pide los datos de un paciente y lo almacena en el registro
+void agregarHistorial(RegistroPacientes &registro); // Agregar el historial medico de un paciente al registro
+int validarCantidadHistorialMedico(int numEntradasHistorial); // Valida la cantidad recibida para pedir al usuario nuevamente la cantidad de nuevos datos si el limite es superado
+
 
 #endif

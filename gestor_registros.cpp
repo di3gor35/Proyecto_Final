@@ -1,6 +1,6 @@
 #include <iostream>
 #include "gestor_registros.h"
- 
+
 using namespace std;
 
 void iniciarRegistro(RegistroPacientes &registro){
@@ -214,4 +214,38 @@ void crearPaciente2(RegistroPacientes &registro){
 	Paciente paciente;
 	crearPaciente(paciente, nombre, edad, genero, numeroDNI, tipoSangre);
 	agregarPaciente(registro, paciente);
+}
+
+int validarCantidadHistorialMedico(int numEntradasHistorial){
+	bool valido;
+	int nantce;
+	do {
+		cout << "¿Cuántos antecedentes ingresará?: ", cin >> nantce;
+		valido = true;
+		if (nantce + numEntradasHistorial > 10){
+			cout << "Con esta cantidad se supera el límite de 10 antecedentes establecido" << endl;	
+			cout << "Número de antecedentes ya establecidos: " << numEntradasHistorial << endl;
+			valido = false;
+		}
+	} while(valido == false);
+	return nantce;
+}
+
+void agregarHistorial(RegistroPacientes &registro){
+	string numeroDNI;
+	int nantce; // Cantidad de antecedentes que se ingresaran
+	cout << "Ingrese el número DNI del paciente: ", cin >> numeroDNI;
+	for (int i = 0; i < registro.numPacientes; i++){
+		if (registro.pacientes[i].numeroDNI == numeroDNI){
+			nantce = validarCantidadHistorialMedico(registro.pacientes[i].numEntradasHistorial);
+			for(int j = registro.pacientes[i].numEntradasHistorial; j < nantce + registro.pacientes[i].numEntradasHistorial; j++){
+				cout << "Antecedente " << j+1 << ": ";
+				cin.ignore();
+				getline(cin, registro.pacientes[i].historialMedico[j]);
+			}
+			registro.pacientes[i].numEntradasHistorial += nantce;
+            return;
+		}
+	}
+	
 }
