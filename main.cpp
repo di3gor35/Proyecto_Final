@@ -11,7 +11,7 @@ int main() {
 	RegistroPacientes registro;
 	iniciarRegistro(registro);
 	iniciarDatosPredefinidos (registro);
-	cout << "Bienvenidos al: Programa de Simulación de un Sistema de Información de Registro de Pacientes" << endl << endl;
+	cout << "Bienvenidos al: Programa de Simulación de un " << endl << "Sistema de Información de Registro de Pacientes" << endl << endl;
 	menuprinc(registro);
 	
 	return 0;

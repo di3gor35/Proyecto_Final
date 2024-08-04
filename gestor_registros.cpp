@@ -238,9 +238,9 @@ void agregarHistorial(RegistroPacientes &registro){
 	for (int i = 0; i < registro.numPacientes; i++){
 		if (registro.pacientes[i].numeroDNI == numeroDNI){
 			nantce = validarCantidadHistorialMedico(registro.pacientes[i].numEntradasHistorial);
+			cin.ignore();
 			for(int j = registro.pacientes[i].numEntradasHistorial; j < nantce + registro.pacientes[i].numEntradasHistorial; j++){
 				cout << "Antecedente " << j+1 << ": ";
-				cin.ignore();
 				getline(cin, registro.pacientes[i].historialMedico[j]);
 			}
 			registro.pacientes[i].numEntradasHistorial += nantce;
